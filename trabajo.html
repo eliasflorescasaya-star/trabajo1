@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>AnimeWorld</title>
+
+<link rel="icon" href="imagenes/𖦹 ִ ۫ ⭒ kokomi.jfif">
+
+<link rel="stylesheet" href="css/trabajo.css">
+
+</head>
+
+<body>
+
+<div class="contenedor">
+
+<h1 class="titulo">
+🌸 ANIME WORLD 🌸
+</h1>
+
+<p class="subtitulo">
+Explora mangas, personajes, fondos, imágenes y GIFs
+</p>
+
+<hr>
+
+<h2 class="animes">
+📌 Animes disponibles
+</h2>
+
+<input
+type="text"
+id="buscador"
+class="buscador"
+placeholder="🔎 Buscar anime...">
+
+<hr>
+
+<table align="center" border="1" class="tabla">
+
+<tr>
+
+<td class="anime" data-name="rezero">
+<a href="re_zero.html">
+<img src="imagenes/rem.jpg" width="300" height="200">
+<br>
+<h3>Re:Zero</h3>
+</a>
+</td>
+
+<td class="anime" data-name="naruto">
+<a href="naruto.html">
+<img src="imagenes/naruto.jpg" width="300" height="200">
+<br>
+<h3>Naruto</h3>
+</a>
+</td>
+
+</tr>
+
+<tr>
+
+<td class="anime" data-name="darling">
+<a href="darling in the franxx.html">
+<img src="imagenes/Darling-in-the-FranXX.jpg" width="300" height="200">
+<br>
+<h3>Darling in the Franxx</h3>
+</a>
+</td>
+
+<td class="anime" data-name="elfen">
+<a href="alfenlieed.html">
+<img src="imagenes/elfenlieed3.jpg" width="300" height="200">
+<br>
+<h3>Elfen Lied</h3>
+</a>
+</td>
+
+</tr>
+
+<tr>
+
+<td class="anime" data-name="mushoku">
+<a href="mushoku.html">
+<img src="imagenes/rudeus1.jpg" width="300" height="200">
+<br>
+<h3>Mushoku Tensei</h3>
+</a>
+</td>
+
+<td></td>
+
+</tr>
+
+</table>
+
+<hr>
+
+<p class="descripcion">
+
+Selecciona un anime para ver su historia, personajes, imágenes y GIFs.
+
+</p>
+<hr>
+
+<h2>🌸 Recomienda un anime 🌸</h2>
+
+<form action="php/guardarcomentario.php" method="POST">
+
+<label>Nombre:</label>
+<br>
+
+<input type="text"
+name="nombre"
+placeholder="Tu nombre"
+required>
+
+<br><br>
+
+<label>Anime favorito:</label>
+<br>
+
+<select name="anime" required>
+
+<option value="">Seleccione</option>
+
+<option>Re:Zero</option>
+<option>Naruto</option>
+<option>Darling in the Franxx</option>
+<option>Elfen Lied</option>
+<option>Mushoku Tensei</option>
+
+</select>
+
+<br><br>
+
+<label>Personaje favorito:</label>
+<br>
+
+<input type="text"
+name="personaje"
+placeholder="Ej: Roxy"
+required>
+
+<br><br>
+
+<label>Comentario:</label>
+<br>
+
+<textarea
+name="comentario"
+placeholder="Escribe tu comentario..."
+required>
+</textarea>
+
+<br><br>
+
+<input type="submit" value="Enviar">
+
+<input type="reset" value="Limpiar">
+
+</form>
+
+<hr>
+
+</div>
+
+<script >
+    document.addEventListener("DOMContentLoaded", function(){
+
+let buscador=document.getElementById("buscador");
+
+let animes=document.querySelectorAll(".anime");
+
+buscador.addEventListener("keyup",function(){
+
+let texto=buscador.value.toLowerCase();
+
+animes.forEach(anime=>{
+
+let nombre=anime.dataset.name;
+
+anime.style.display=
+nombre.includes(texto)
+? ""
+: "none";
+
+});
+
+});
+
+});
+</script>
+
+</body>
+</html>

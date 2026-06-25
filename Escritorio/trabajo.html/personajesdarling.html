@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Anime Darling in the Franxx</title>
+
+<style>
+
+body{
+    margin:0;
+    background:linear-gradient(rgba(255,105,180,0.4), #6d0033);
+    color:white;
+    font-family:sans-serif;
+    text-align:center;
+}
+
+h1{
+    color:#ff4da6;
+}
+
+input{
+    padding:10px;
+    width:250px;
+    border-radius:10px;
+    border:none;
+    margin:20px;
+}
+
+.contenedor{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.card{
+    background:#111;
+    width:230px;
+    border-radius:15px;
+    overflow:hidden;
+    transition:0.3s;
+    cursor:pointer;
+}
+
+.card:hover{
+    transform:scale(1.08);
+    box-shadow:0px 0px 25px #000000;
+}
+
+.card img{
+    width:100%;
+    height:300px;
+}
+
+.info{
+    padding:10px;
+}
+
+.info h3{
+    color:#ff4da6;
+}
+
+.popup{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.85);
+    display:none;
+    justify-content:center;
+    align-items:center;
+}
+
+.popup-content{
+    background:#111;
+    padding:20px;
+    border-radius:15px;
+    width:300px;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>❤️ Personajes de Darling in the Franxx ❤️</h1>
+
+<input type="text" id="buscador" placeholder="Buscar personaje...">
+
+<div class="contenedor">
+
+<div class="card" data-name="hiro">
+<img src="imagenes/hiro.jpg">
+<div class="info">
+<h3>Hiro</h3>
+<p>Protagonista principal.</p>
+</div>
+</div>
+
+<div class="card" data-name="zerotwo">
+<img src="imagenes/zerotwo.jpg">
+<div class="info">
+<h3>Zero Two</h3>
+<p>Piloto híbrida.</p>
+</div>
+</div>
+
+<div class="card" data-name="ichigo">
+<img src="imagenes/ichigo3.jpg">
+<div class="info">
+<h3>Ichigo</h3>
+<p>Líder del escuadrón.</p>
+</div>
+</div>
+
+<div class="card" data-name="goro">
+<img src="imagenes/goro.jpg">
+<div class="info">
+<h3>Goro</h3>
+<p>Mejor amigo de Hiro.</p>
+</div>
+</div>
+
+<div class="card" data-name="zorome">
+<img src="imagenes/zorome.jpg">
+<div class="info">
+<h3>Zorome</h3>
+<p>Piloto impulsivo.</p>
+</div>
+</div>
+
+<div class="card" data-name="miku">
+<img src="imagenes/miku.jpg">
+<div class="info">
+<h3>Miku</h3>
+<p>Piloto energética.</p>
+</div>
+</div>
+
+<div class="card" data-name="kokoro">
+<img src="imagenes/kokoro.jpg">
+<div class="info">
+<h3>Kokoro</h3>
+<p>Piloto amable.</p>
+</div>
+</div>
+
+<div class="card" data-name="mitsuru">
+<img src="imagenes/mitsuru.jpg">
+<div class="info">
+<h3>Mitsuru</h3>
+<p>Piloto serio.</p>
+</div>
+</div>
+
+<div class="card" data-name="ikuno">
+<img src="imagenes/ikuno.jpg">
+<div class="info">
+<h3>Ikuno</h3>
+<p>Piloto inteligente.</p>
+</div>
+</div>
+
+<div class="card" data-name="futoshi">
+<img src="imagenes/futoshi.jpg">
+<div class="info">
+<h3>Futoshi</h3>
+<p>Piloto optimista.</p>
+</div>
+</div>
+
+<div class="card" data-name="nana">
+<img src="imagenes/nana1.jpg">
+<div class="info">
+<h3>Nana</h3>
+<p>Supervisora.</p>
+</div>
+</div>
+
+<div class="card" data-name="hachi">
+<img src="imagenes/hachi.jpg">
+<div class="info">
+<h3>Hachi</h3>
+<p>Supervisor.</p>
+</div>
+</div>
+
+<div class="card" data-name="drfranxx">
+<img src="imagenes/drfranxx.jpg">
+<div class="info">
+<h3>Dr Franxx</h3>
+<p>Científico.</p>
+</div>
+</div>
+
+<div class="card" data-name="papa">
+<img src="imagenes/papa.jpg">
+<div class="info">
+<h3>Papa</h3>
+<p>Líder de APE.</p>
+</div>
+</div>
+
+<div class="card" data-name="code001">
+<img src="imagenes/code001.jpg">
+<div class="info">
+<h3>Code 001</h3>
+<p>Princesa Klaxosaurio.</p>
+</div>
+</div>
+
+</div>
+
+
+<div class="popup" id="popup">
+
+<div class="popup-content">
+
+<h2 id="titulo"></h2>
+
+<p id="descripcion"></p>
+
+<button onclick="cerrarPopup()">
+Cerrar
+</button>
+
+</div>
+
+</div>
+
+<audio id="clickSound" src="sonidos/WhatsApp Audio 2026-05-04 at 10.25.34 PM.mpeg"></audio>
+
+<script src="javascrip/darling.js"></script>
+
+<br><br>
+
+<a href="darling in the franxx.html">
+<button>⬅ Volver</button>
+</a>
+
+</body>
+</html>

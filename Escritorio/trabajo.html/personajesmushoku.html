@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Personajes Mushoku Tensei</title>
+
+<style>
+body{
+    margin:0;
+    background: linear-gradient(rgba(66, 135, 245, 0.4), #2b1b0f);
+    color:white;
+    font-family:sans-serif;
+    text-align:center;
+}
+
+h1{ color:#7dd3fc; }
+
+input{
+    padding:10px;
+    width:250px;
+    border-radius:10px;
+    border:none;
+    margin:20px;
+}
+
+.contenedor{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.card{
+    background:#111;
+    width:230px;
+    border-radius:15px;
+    overflow:hidden;
+    transition:0.3s;
+    cursor:pointer;
+}
+
+.card:hover{
+    transform:scale(1.08);
+    box-shadow:0px 0px 25px #000000;
+}
+
+.card img{
+    width:100%;
+    height:300px;
+}
+
+.info{ padding:10px; }
+
+.info h3{ color:#facc15; }
+
+.popup{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.829);
+    display:none;
+    justify-content:center;
+    align-items:center;
+}
+
+.popup-content{
+    background:#111;
+    padding:20px;
+    border-radius:15px;
+    width:300px;
+}
+</style>
+
+</head>
+<body>
+
+<h1>✨ Personajes de Mushoku Tensei ✨</h1>
+
+<input type="text" id="buscador" placeholder="Buscar personaje...">
+
+<div class="contenedor">
+
+<div class="card" data-name="rudeus">
+    <img src="imagenes/rudy.jpg">
+    <div class="info">
+        <h3>Rudeus Greyrat</h3>
+        <p>Protagonista reencarnado.</p>
+    </div>
+</div>
+
+<div class="card" data-name="roxy">
+    <img src="imagenes/roxy.jpg">
+    <div class="info">
+        <h3>Roxy Migurdia</h3>
+        <p>Maestra de magia de Rudeus.</p>
+    </div>
+</div>
+
+<div class="card" data-name="eris">
+    <img src="imagenes/eris.jpg">
+    <div class="info">
+        <h3>Eris Boreas Greyrat</h3>
+        <p>Compañera de aventuras.</p>
+    </div>
+</div>
+
+<div class="card" data-name="sylphiette">
+    <img src="imagenes/sylphi1.jpg">
+    <div class="info">
+        <h3>Sylphiette</h3>
+        <p>Amiga de la infancia.</p>
+    </div>
+</div>
+
+<div class="card" data-name="ruijerd">
+    <img src="imagenes/ruijer.jpg">
+    <div class="info">
+        <h3>Ruijerd Supardia</h3>
+        <p>Guerrero de la raza Supard.</p>
+    </div>
+</div>
+
+<div class="card" data-name="paul">
+    <img src="imagenes/paul.jpg">
+    <div class="info">
+        <h3>Paul Greyrat</h3>
+        <p>Padre de Rudeus.</p>
+    </div>
+</div>
+
+<div class="card" data-name="zenith">
+    <img src="imagenes/zenit.jpg">
+    <div class="info">
+        <h3>Zenith Greyrat</h3>
+        <p>Madre de Rudeus.</p>
+    </div>
+</div>
+
+<div class="card" data-name="lilia">
+    <img src="imagenes/lilia.jpg">
+    <div class="info">
+        <h3>Lilia Greyrat</h3>
+        <p>Sirvienta de la familia Greyrat.</p>
+    </div>
+</div>
+
+<div class="card" data-name="aisha">
+    <img src="imagenes/aisha.jpg">
+    <div class="info">
+        <h3>Aisha Greyrat</h3>
+        <p>Hermana menor de Rudeus.</p>
+    </div>
+</div>
+
+<div class="card" data-name="norn">
+    <img src="imagenes/norn.jpg">
+    <div class="info">
+        <h3>Norn Greyrat</h3>
+        <p>Hermana menor de Rudeus.</p>
+    </div>
+</div>
+
+<div class="card" data-name="ghislaine">
+    <img src="imagenes/gilein.jpg">
+    <div class="info">
+        <h3>Ghislaine Dedoldia</h3>
+        <p>Espadachina muy poderosa.</p>
+    </div>
+</div>
+
+<div class="card" data-name="orsted">
+    <img src="imagenes/orsted.jpg">
+    <div class="info">
+        <h3>Orsted</h3>
+        <p>Dios Dragón.</p>
+    </div>
+</div>
+
+<div class="card" data-name="hitogami">
+    <img src="imagenes/hitogami.jpg">
+    <div class="info">
+        <h3>Hitogami</h3>
+        <p>Dios Humano misterioso.</p>
+    </div>
+</div>
+
+<div class="card" data-name="zanoba">
+    <img src="imagenes/zanoba.jpg">
+    <div class="info">
+        <h3>Zanoba Shirone</h3>
+        <p>Príncipe de Shirone.</p>
+    </div>
+</div>
+
+<div class="card" data-name="nanahoshi">
+    <img src="imagenes/nanahoshi.jpg">
+    <div class="info">
+        <h3>Nanahoshi Shizuka</h3>
+        <p>Joven proveniente de Japón.</p>
+    </div>
+</div>
+
+</div>
+
+<div class="popup" id="popup">
+    <div class="popup-content">
+        <h2 id="titulo"></h2>
+        <p id="descripcion"></p>
+        <button onclick="cerrarPopup()">Cerrar</button>
+    </div>
+</div>
+
+<audio id="clickSound" src="sonidos/WhatsApp Audio 2026-05-04 at 10.25.34 PM.mpeg"></audio>
+
+<script src="javascrip/mushoku.js"></script>
+
+<br><br>
+
+<a href="mushoku.html">
+    <button>⬅ Volver</button>
+</a>
+
+</body>
+</html>
